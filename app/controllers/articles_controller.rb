@@ -6,4 +6,7 @@ class ArticlesController < ApplicationController
     @categories = Category.all
   end
 
+  def new
+    @article = Article.new
+  end
 end
