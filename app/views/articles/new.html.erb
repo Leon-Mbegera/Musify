@@ -1,0 +1,9 @@
+<div>
+  <%= form_with model: @article do |f|%>
+      <%=f.label :category%><br>
+      <%=f.select :category_id, Category.all.pluck(:name, :id), { prompt:'select' }%>
+      <% @article.errors.full_messages_for(:category_id).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>
+  <%end%>
+</div>
