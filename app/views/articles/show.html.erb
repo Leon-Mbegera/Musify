@@ -1,0 +1,9 @@
+<div>
+  <h2><%= @article.title %></h2>
+
+  <% if @article.image.attached? %>
+    <%= image_tag @article.image%>
+  <% end %>
+
+  <p><%= @article.body %></p>
+</div>
