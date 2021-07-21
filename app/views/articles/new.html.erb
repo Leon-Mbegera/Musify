@@ -1,9 +1,43 @@
-<div>
+<section>
+
   <%= form_with model: @article do |f|%>
+    <div>
       <%=f.label :category%><br>
-      <%=f.select :category_id, Category.all.pluck(:name, :id), { prompt:'select' }%>
+      <%=f.collection_select :category_id, Category.order(:name), :id, :name, { :include_blank => 'pick category' }%>
+      <p>Build new category <%= link_to "Build Category", new_category_path%></p>
       <% @article.errors.full_messages_for(:category_id).each do |error_message| %>
         <div><%= error_message %></div>
       <% end %>
+    </div>
+
+    <div>
+      <%=f.label :title%>
+      <%=f.text_field :title %>
+      <% @article.errors.full_messages_for(:title).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>  
+    </div>
+
+    <div>
+      <%=f.label :body%>
+      <%=f.text_area :body%>
+       <% @article.errors.full_messages_for(:body).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%=f.label :image%>
+      <%=f.file_field :image%>
+      <% @article.errors.full_messages_for(:image).each do |error_message| %>
+        <div><% error_message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%=f.submit 'Upload' %>
+    </div>
+
   <%end%>
-</div>
+
+</section>
