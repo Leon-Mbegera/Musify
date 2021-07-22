@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create(name: 'leon', email: 'leon@example', password: '123456')}
+  let(:user) { User.create(username: 'leon', email: 'leon@example', password: '123456')}
 
   it 'ensures a user has a name' do
     user = User.create(email: 'leon@example', password: '123456')
@@ -9,12 +9,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'ensures a user has an email' do
-    user = User.create(name: 'leon', password: '123456')
+    user = User.create(username: 'leon', password: '123456')
     expect(user.valid?).to be false
   end
 
   it 'ensures a user has an password' do
-    user = User.create(name: 'leon', email: 'leon@example',)
+    user = User.create(username: 'leon', email: 'leon@example',)
     expect(user.valid?).to be false
   end
 
