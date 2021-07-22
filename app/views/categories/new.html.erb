@@ -1,0 +1,11 @@
+<div>
+  <h2>Build new category</h2>
+  <%= form_with(model: @category, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <div>
+      <%= f.submit 'Build'%>
+    </div>
+  <% end %>
+</div>
