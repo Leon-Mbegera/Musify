@@ -1,11 +1,14 @@
 <div>
   <h2>Build new category</h2>
   <%= form_with(model: @category, local: true) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <% @category.errors.full_messages_for(:name).each do |error_message| %>
+      <div><%= error_message %></div>
+    <% end %>
     <div>
       <%= f.submit 'Build'%>
+      <p> <%= link_to "Return to article's page", new_article_path %></p>
     </div>
   <% end %>
 </div>
