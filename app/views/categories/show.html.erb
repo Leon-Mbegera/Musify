@@ -1,0 +1,23 @@
+<section>
+  <% category_with_articles = @category.articles.most_recent.includes(:category) %>
+  <% category_with_articles.each do |article| %>
+    <div>
+      <div>
+        <% if article.image.attached? %>
+          <%=image_tag article.image %>
+        <% end %>
+      </div>
+      <div>
+        <p><%= @category.name %></p>
+        <br>
+        <p><%= link_to article.title, article_path(article) %></p>
+        <p>Written by article.user.name</p>
+        <br>
+        <p><%= article.body%></p>
+      </div>
+      <div>
+        <p><%= article.votes.count %> votes.</p>
+      </div>
+    </div>
+  <% end %>
+</section>
