@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+.footer {
+  position: fixed;
+  width: 100%;
+  background-color: #4e443e;
+  justify-content: center;
+  color: white;
+}
+
+.font-color,
+.media-icon {
+  color: #fd6000;
+}
+
+.h-logo {
+  font-weight: bold;
+  color:#4e443e;
+  font-size: 2em;
+}
+.f-logo {
+  font-weight: bold;
+  color: white;
+  font-size: 2em;
+}
+
+.c-link {
+  color: black;
+}

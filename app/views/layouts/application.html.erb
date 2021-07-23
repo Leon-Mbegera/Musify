@@ -19,17 +19,18 @@
     </script>
 
   </head>
+
     <body>
       <% if user_signed_in? %>
         <header class= "d-flex flex-row bg-light navbar-light justify-content-between">
           
-        <div>
-          <a href="#" class="h-logo">Musify</a>
-        </div>
+          <div>
+            <a href="#" class="h-logo">Musify</a>
+          </div>
 
             <nav class= "navbar navbar-expand-lg">
               <ul class= 'navbar-nav'>
-                <li><a class = "nav-link c-link"><%= link_to "Home"%></a> </li>
+                <li><%= link_to "Home", class: "nav-link c-link"%></li>
                 <li class = "nav-link c-link"> <%= link_to "Grime"%></li>
                 <li class = "nav-link c-link"> <%= link_to "Trap"%></li>
                 <li class = "nav-link c-link"> <%= link_to "House"%></li>
@@ -49,22 +50,25 @@
           
         </header>
       <% end %>
-      <%= yield %>
-      <footer class = "footer d-flex justify-content-between">
-        <div>
-          <a href="#" class="f-logo">Musify</a>
-        </div>
-        <div class = "d-flex">
-          <p class = "font-color">Privacy Policy Terms & Conditions</p>
-          <p class = "ml-2">Copyright 2014.</p>
-          <p class = "ml-2"> All Rights Reserved.</p>
-        </div>
-        <div>
-          Connect with Us:<i class="fab fa-facebook fa-lg media-icon"></i>
-                          <i class="fab fa-twitter-square fa-lg media-icon"></i>
-                          <i class="fab fa-instagram-square fa-lg media-icon"></i>
-        </div>
-      </footer>
+
+       <%= yield %> 
+
+        <footer class = "footer d-flex justify-content-between">
+          <div>
+            <a href="#" class="f-logo">Musify</a>
+          </div>
+          <div class = "d-flex">
+            <p class = "font-color">Privacy Policy Terms & Conditions</p>
+            <p class = "ml-2">Copyright 2014.</p>
+            <p class = "ml-2"> All Rights Reserved.</p>
+          </div>
+          <div>
+            Connect with Us:<i class="fab fa-facebook fa-lg media-icon"></i>
+                            <i class="fab fa-twitter-square fa-lg media-icon"></i>
+                            <i class="fab fa-instagram-square fa-lg media-icon"></i>
+          </div>
+        </footer>
+
     </body>
 </html>
 
