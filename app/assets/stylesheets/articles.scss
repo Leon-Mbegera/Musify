@@ -24,7 +24,16 @@
 }
 
 .field {
-  width: 90%;
+  width: 100%;
+  border: none;
+  border-bottom: #3f210e 3px solid;
 }
+
+.submit {
+  background-color: #fd6000;
+  color:#3f210e;
+  border: none;
+}
+
 
 

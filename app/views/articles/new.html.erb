@@ -3,7 +3,7 @@
   <h2>Write your article</h2>
   <%= form_with model: @article do |f|%>
     <div>
-      <%=f.label :category%><br>
+      <%=f.label :category, class: 'label'%>
       <%=f.collection_select :category_id, Category.order(:name), :id, :name, { :include_blank => 'pick category' }%>
       <p>Build new category <%= link_to "Build Category", new_category_path%></p>
       <% @article.errors.full_messages_for(:category_id).each do |error_message| %>
@@ -20,15 +20,15 @@
     </div>
 
     <div>
-      <%=f.label :body%>
-      <%=f.text_area :body%>
+      <%=f.label :body, class: 'label'%>
+      <%=f.text_area :body, class: 'field'%>
        <% @article.errors.full_messages_for(:body).each do |error_message| %>
         <div><%= error_message %></div>
       <% end %>
     </div>
 
-    <div>
-      <%=f.label :image%>
+    <div class='d-flex flex-column'>
+      <%=f.label :image, class: 'label'%>
       <%=f.file_field :image%>
       <% @article.errors.full_messages_for(:image).each do |error_message| %>
         <div><% error_message %></div>
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-      <%=f.submit 'Upload' %>
+      <%=f.submit 'Upload', class: 'submit my-4'%>
     </div>
 
   <%end%>
