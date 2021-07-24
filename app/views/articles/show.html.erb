@@ -1,9 +1,10 @@
 <div>
   <h2><%= @article.title %></h2>
-
+  <p><%= @article.body%></p>
+  <p>Blogger: <%= @article.user.name%></p>
   <% if @article.image.attached? %>
     <%= image_tag @article.image%>
   <% end %>
 
-  <p><%= @article.body %></p>
+  <p>Blogger: <%= @article.user.name%></p>
 </div>

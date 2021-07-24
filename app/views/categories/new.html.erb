@@ -1,14 +1,16 @@
-<div>
-  <h2>Build new category</h2>
-  <%= form_with(model: @category, local: true) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <% @category.errors.full_messages_for(:name).each do |error_message| %>
-      <div><%= error_message %></div>
-    <% end %>
-    <div>
-      <%= f.submit 'Build'%>
-      <p> <%= link_to "Return to article's page", new_article_path %></p>
-    </div>
-  <% end %>
-</div>
+<section class='background'>
+  <div class='form-div'>
+    <h2>Build new category</h2>
+      <%= form_with(model: @category, local: true) do |f| %>
+        <%= f.label :name, class: 'label' %>
+        <%= f.text_field :name, class: 'field' %>
+        <% @category.errors.full_messages_for(:name).each do |error_message| %>
+          <div><%= error_message %></div>
+        <% end %>
+        <div>
+          <%= f.submit 'Build', class: 'submit'%>
+          <p> <%= link_to "Return to article's page", new_article_path %></p>
+        </div>
+      <% end %>
+  </div>
+</section>
