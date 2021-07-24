@@ -1,15 +1,32 @@
-<div>
-  <% @category.each do |category|%>
-    <% if category.articles.any? %>
-      <p><%= image_tag category.articles.most_recent.first.image if category.articles.most_recent.first.image.attached? %></p>
-      <br>
-      <p><%= link_to category.name, category_path(category) %></p>
-      <div>
-        <%= link_to category.articles.most_recent.first.title,  article_path(category.articles.most_recent.first) %>
-      </div>
+<section>
+  <div class='most-voted'>
+    <% if Vote.popular == [] %>
+      <p>Oops! Looks like there's isn't any popular articles</p>
     <% else %>
-      <p><%= link_to category.name,  category_path(category) %></p>
-      <p>Oops! Looks like there's no articles</p>
-    <% end %>  
-  <% end %>
-</div>
+    <div class='most-voted-title'>
+      <%= link_to Vote.popular.first.article.title, article_path(Vote.popular.first.article) %>
+    </div>
+      <p class='most-voted-body'> <%= link_to Vote.popular.first.article.body %></p>
+      <% if Vote.popular.first.article.image.attached? %>
+        <p class='most-voted-image'> <%= link_to Vote.popular.first.article.image%></p>
+      <% end %>
+    <% end %> 
+  </div>
+  
+  <div>
+    <% @category.each do |category|%>
+      <% if category.articles.any? %>
+        <p><%= image_tag category.articles.most_recent.first.image if category.articles.most_recent.first.image.attached? %></p>
+        <br>
+        <p><%= link_to category.name, category_path(category) %></p>
+        <div>
+          <%= link_to category.articles.most_recent.first.title,  article_path(category.articles.most_recent.first) %>
+        </div>
+      <% else %>
+        <p><%= link_to category.name,  category_path(category) %></p>
+        <p>Oops! Looks like there's no articles</p>
+      <% end %>  
+    <% end %>
+  </div>
+</section>
+
