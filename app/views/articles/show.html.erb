@@ -6,9 +6,29 @@
     <% if @article.image.attached? %>
       <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
     <% end %>
-
     <p>Blogger: <%= @article.user.name%></p>
   </div>
 
+  <div class='background'>
+    <div class='form-div'>
+      <%= form_with model: [ @article, @article.opinions.build ] do |f| %>
+        <div>
+          <%= f.label :Opinion, class: 'label' %> <br>
+          <%= f.text_field :content, class: 'form-field'%>
+        </div>
+        <div>
+          <%= f.submit 'Upload', class: 'submit' %>
+        </div>
+      <% end %> 
+    </div>
 
+    <div>
+      <% if @article.opinions.any? %>
+        <h5>Other's opinions</h5>
+        <% @article.opinions.each do |opinion| %>
+          <p><%= opinion.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </section>
