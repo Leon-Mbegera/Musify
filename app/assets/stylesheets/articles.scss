@@ -158,4 +158,35 @@
   width: 100%;
 }
 
+.article-display {
+  position: absolute;
+  z-index: 10;
+  top: 5%;
+  left: 5%;
+}
+
+.article-display a {
+  color: white;
+  text-decoration: none;
+}
+
+.article-display a:hover {
+  color:#fd6000;
+  text-decoration: none;
+}
+
+.opinion-div {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  padding: 4rem;
+  width: 60%;
+}
+
+@media only screen and (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: auto auto;
+  }
+}
+
 

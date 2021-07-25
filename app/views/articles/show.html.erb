@@ -1,16 +1,19 @@
 <section>
   <div class='wrapper'>
-    <h2><%= @article.title %></h2>
-    <p><%= @article.body%></p>
-    <p>Blogger: <%= @article.user.name%></p>
-    <% if @article.image.attached? %>
-      <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
-    <% end %>
+    <div class='article-display'>
+      <h5><%= @article.title %></h5>
+      <p><%= @article.body%></p>
+      <p>Blogger: <%= @article.user.name%></p>
+      <% if @article.image.attached? %>
+        <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
+      <% end %>
+    </div>
     <p>Blogger: <%= @article.user.name%></p>
   </div>
 
   <div class='background'>
     <div class='form-div'>
+      <h5 class='label'>Leave your opinion...</h5>
       <%= form_with model: [ @article, @article.opinions.build ] do |f| %>
         <div>
           <%= f.label :Opinion, class: 'label' %> <br>
@@ -22,9 +25,9 @@
       <% end %> 
     </div>
 
-    <div>
+    <div class='opinion-div'>
       <% if @article.opinions.any? %>
-        <h5>Other's opinions</h5>
+        <h5 class='label'>Other's opinions</h5>
         <% @article.opinions.each do |opinion| %>
           <p><%= opinion.content %></p>
         <% end %>
