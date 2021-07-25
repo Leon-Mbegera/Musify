@@ -13,7 +13,7 @@
 
     <div>
       <%=f.label :title, class: 'label'%>
-      <%=f.text_field :title, class: 'field' %>
+      <%=f.text_field :title, class: 'form-field' %>
       <% @article.errors.full_messages_for(:title).each do |error_message| %>
         <div><%= error_message %></div>
       <% end %>  
@@ -21,7 +21,7 @@
 
     <div>
       <%=f.label :body, class: 'label'%>
-      <%=f.text_area :body, class: 'field'%>
+      <%=f.text_area :body, class: 'form-field'%>
        <% @article.errors.full_messages_for(:body).each do |error_message| %>
         <div><%= error_message %></div>
       <% end %>
