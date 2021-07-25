@@ -13,19 +13,19 @@
     <% end %> 
   </div>
   
-  <div>
+  <div class='category-grid'>
     <% @category.each do |category|%>
     <div class='category-div'>
       <% if category.articles.any? %>
-        <p><%= image_tag category.articles.most_recent.first.image if category.articles.most_recent.first.image.attached? %></p>
+        <p class='c-newest-image'><%= image_tag category.articles.most_recent.first.image, class: 'cnewestimage' if category.articles.most_recent.first.image.attached? %></p>
         <br>
-        <p><%= link_to category.name, category_path(category) %></p>
-        <div>
+        <p class='c-name'><%= link_to category.name, category_path(category) %></p>
+        <div class='c-newest-title'>
           <%= link_to category.articles.most_recent.first.title,  article_path(category.articles.most_recent.first) %>
         </div>
       <% else %>
-        <p><%= link_to category.name,  category_path(category) %></p>
-        <p>Oops! Looks like there's no articles</p>
+        <p class='c-name'><%= link_to category.name,  category_path(category) %></p>
+        <p class='oops'>Oops! Looks like there's no articles</p>
       <% end %>
     </div>
         

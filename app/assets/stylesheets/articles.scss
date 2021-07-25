@@ -74,4 +74,61 @@
   text-decoration: none;
 }
 
+.category-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.category-div {
+  position: relative;
+  background-size: 100% 100%;
+  height: 14rem;
+  width: 98%;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+  background-image: url(./assets/images/thug.jpg);
+}
+
+.c-newest-image {
+  position: absolute;
+  height: 100%;
+  width: 100%; 
+}
+
+.cnewestimage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.c-name {
+  position: absolute;
+  top: 3%;
+}
+
+.c-name a {
+  color: white;
+  font-weight: bold;
+}
+
+.c-name a:hover {
+  color: #fd6000;
+  text-decoration: none;
+}
+
+.c-newest-title {
+  position: absolute;
+  left: 20%;
+  bottom: 3%;
+}
+
+.c-newest-title a {
+  color: white;
+  font-weight: bold;
+}
+
+.c-newest-title a:hover {
+  color: #fd6000;
+  text-decoration: none;
+}
 
