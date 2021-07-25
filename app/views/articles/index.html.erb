@@ -8,13 +8,14 @@
     </div>
       <p class='most-voted-body'> <%= link_to Vote.popular.first.article.body %></p>
       <% if Vote.popular.first.article.image.attached? %>
-        <p class='most-voted-image'> <%= link_to Vote.popular.first.article.image%></p>
+        <p class='most-voted-image'> <%= link_to Vote.popular.first.article.image, class: 'voted-image'%></p>
       <% end %>
     <% end %> 
   </div>
   
   <div>
     <% @category.each do |category|%>
+    <div class='category-div'>
       <% if category.articles.any? %>
         <p><%= image_tag category.articles.most_recent.first.image if category.articles.most_recent.first.image.attached? %></p>
         <br>
@@ -25,7 +26,9 @@
       <% else %>
         <p><%= link_to category.name,  category_path(category) %></p>
         <p>Oops! Looks like there's no articles</p>
-      <% end %>  
+      <% end %>
+    </div>
+        
     <% end %>
   </div>
 </section>
