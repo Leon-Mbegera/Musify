@@ -1,22 +1,24 @@
-<section>
+<section class='category-display'>
   <% category_with_articles = @category.articles.most_recent.includes(:category) %>
   <% category_with_articles.each do |article| %>
-    <div>
-      <div>
+    <div class='c-article-wrapper'>
+      <div class='article-bg'>
         <% if article.image.attached? %>
-          <%=image_tag article.image %>
+          <%=image_tag article.image, class: 'article-bg-image'  %>
         <% end %>
       </div>
-      <div>
-        <p><%= @category.name %></p>
+      <div class="article-description">
+        <p class='name_category'><%= @category.name %></p>
         <br>
-        <p><%= link_to article.title, article_path(article) %></p>
+        <p class="category_article_title"><%= link_to article.title, article_path(article) %></p>
         <p>Written by article.user.name</p>
         <br>
         <p><%= article.body%></p>
       </div>
       <div>
-        <p><%= article.votes.count %> votes.</p>
+        <p class="category_article_vote"><%= article.votes.count %> votes.</p>
+        <p class="category_article_vote"><%= vote-btn(article)0%></p>
+     
       </div>
     </div>
   <% end %>

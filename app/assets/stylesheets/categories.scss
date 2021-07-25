@@ -1,3 +1,57 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category-display {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 0.2rem;
+  margin-top: 3.5rem;
+}
+
+.c-article-wrapper {
+  display: flex;
+  width: 98%;
+  height: 18rem;
+  margin-top: 0.2rem;
+}
+
+.article-bg{
+  width: 48%;
+  background-color: #3f210e;
+}
+
+.article-bg-image {
+  height: 100%;
+  width: 100%;
+}
+
+.article-description {
+  padding-left: 5px;
+  width: 50%;
+}
+
+.name-of-category {
+  color: #fd6000;
+  font-weight: bold;
+}
+
+.name_category {
+  color: #fd6000;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.category_article_title a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.category_article_title a:hover {
+  color:#fd6000;
+  text-decoration: none;
+}
+
+
+

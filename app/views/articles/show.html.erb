@@ -4,11 +4,11 @@
       <h5><%= @article.title %></h5>
       <p><%= @article.body%></p>
       <p>Blogger: <%= @article.user.name%></p>
+      <%= vote-btn(@article%>
       <% if @article.image.attached? %>
         <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
       <% end %>
     </div>
-    <p>Blogger: <%= @article.user.name%></p>
   </div>
 
   <div class='background'>
