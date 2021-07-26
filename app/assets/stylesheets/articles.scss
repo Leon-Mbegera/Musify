@@ -36,7 +36,6 @@
 
 .most-voted {
   position: relative;
-  margin: 0.2rem;
   margin-top: 3.5rem;
   width: 100%;
   height: 35rem;
@@ -85,22 +84,21 @@
 .category-grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  margin-bottom: 3.5rem;
 }
 
 .category-div {
   position: relative;
   // background-size: % 100%;
   height: 15rem;
-  width: 98%;
-  margin-left: 0.2rem;
-  margin-top: 0.2rem;
+  width: 100%;
   background-image: url(./assets/images/thug.jpg);
 }
 
 .c-newest-image {
   position: absolute;
   height: 100%;
-  width: 100%; 
+  width: 100%;
 }
 
 .cnewestimage {
@@ -112,6 +110,9 @@
 .c-name {
   position: absolute;
   top: 3%;
+  left: 2%;
+  border-bottom: 2px solid yellow;
+  width: auto;
 }
 
 .c-name a {
@@ -126,7 +127,7 @@
 
 .c-newest-title {
   position: absolute;
-  left: 20%;
+  left: 5%;
   bottom: 3%;
 }
 
