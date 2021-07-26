@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     end
 
     if @article.save
-      redirect_to article_path(@article_id), notice: 'Your article has been created!'
+      redirect_to articles_path(@article_id), notice: 'Your article has been created!'
     else
       render :new, notice: 'Article creation failed!'
     end
