@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all 
     @category = Category.all
+    @first_article = Vote.popular.first || Article.first
   end
 
   def new

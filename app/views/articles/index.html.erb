@@ -1,14 +1,12 @@
 <section>
   <div class='most-voted'>
-    <% if Vote.popular == [] %>
-      <p>Oops! Looks like there's isn't any popular articles</p>
-    <% else %>
+    <% if @first_article %>
     <div class='most-voted-title'>
-      <%= link_to Vote.popular.first.article.title, article_path(Vote.popular.first.article) %>
+      <%= link_to @first_article.title, article_path(@first_article) %>
     </div>
-      <p class='most-voted-body'> <%= link_to Vote.popular.first.article.body %></p>
-      <% if Vote.popular.first.article.image.attached? %>
-        <p class='most-voted-image'> <%= link_to Vote.popular.first.article.image, class: 'voted-image'%></p>
+      <p class='most-voted-body'> <%= @first_article.body%></p>
+      <% if @first_article.image.attached? %>
+        <p class='most-voted-image'> <%= image_tag @first_article.image, class: 'voted-image'%></p>
       <% end %>
     <% end %> 
   </div>
@@ -21,7 +19,7 @@
         <br>
         <p class='c-name'><%= link_to category.name, category_path(category) %></p>
         <div class='c-newest-title'>
-          <%= link_to category.articles.most_recent.first.title,  article_path(category.articles.most_recent.first) %>
+          <%= link_to category.articles.most_recent.first.title, article_path(category.articles.most_recent.first) %>
         </div>
       <% else %>
         <p class='c-name'><%= link_to category.name,  category_path(category) %></p>
