@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all 
     @category = Category.all
-    @article = Vote.popular.first || Article.first
+    @article = Article.find_by(id: Vote.popular.first) || Article.first
   end
 
   def new
@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @opinion = @article.opinions.build
   end
 
   def create

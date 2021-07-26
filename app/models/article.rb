@@ -10,6 +10,6 @@ class Article < ApplicationRecord
   belongs_to :category
   has_one_attached :image
   has_many :votes
-  has_many :comments
+  has_many :opinions
   scope :most_recent, -> { order(created_at: :desc)}
 end

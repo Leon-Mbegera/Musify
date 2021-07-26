@@ -3,8 +3,8 @@
     <div class='article-display'>
       <h5><%= @article.title %></h5>
       <p><%= @article.body%></p>
-      <p>Blogger: <%= @article.user.name%></p>
-      <%= vote_btn(@article)%>
+      <p>Blogger: <%= @article.user.username%></p>
+       <%= vote_btn(@article)%>
       <% if @article.image.attached? %>
         <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
       <% end %>
@@ -14,7 +14,7 @@
   <div class='background'>
     <div class='form-div'>
       <h5 class='label'>Leave your opinion...</h5>
-      <%= form_with model: [ @article, @article.opinions.build ] do |f| %>
+      <%= form_with model:  @opinion, url: article_opinions_path(@article) do |f| %>
         <div>
           <%= f.label :Opinion, class: 'label' %> <br>
           <%= f.text_field :content, class: 'form-field'%>
