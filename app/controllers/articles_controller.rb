@@ -4,11 +4,15 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all 
     @category = Category.all
-    @first_article = Vote.popular.first || Article.first
+    @article = Vote.popular.first || Article.first
   end
 
   def new
     @article = Article.new
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   def create

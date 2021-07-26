@@ -1,12 +1,12 @@
 <section>
   <div class='most-voted'>
-    <% if @first_article %>
+    <% if @article %>
     <div class='most-voted-title'>
-      <%= link_to @first_article.title, article_path(@first_article) %>
+      <%= link_to @article.title, article_path(@article) %>
     </div>
-      <p class='most-voted-body'> <%= @first_article.body%></p>
-      <% if @first_article.image.attached? %>
-        <p class='most-voted-image'> <%= image_tag @first_article.image, class: 'voted-image'%></p>
+      <p class='most-voted-body'> <%= @article.body%></p>
+      <% if @article.image.attached? %>
+        <p class='most-voted-image'> <%= image_tag @article.image, class: 'voted-image'%></p>
       <% end %>
     <% end %> 
   </div>
