@@ -3,7 +3,8 @@
 Musify is a music-based lifestyle website that showcases top genres that are trending in today's entertainment  industry. The app displays most popular articles in each particular genre as its placeholder image with the most voted for article taking up the larger display on the home page. Logged in users can upload articles on their preferred music category, cast their votes and even share the opinions they have on such a topic.
 
 ## Heroku
-
+- [heroku link](https://quiet-journey-61924.herokuapp.com/users/sign_in)
+- [loom video](https://www.loom.com/share/f463f85b52d54f1a8c9e64b6a8c73dcd)
 
 ## screenshots
 <img src="app\assets\images\app_scrshots\1.png" alt="Home screen">
