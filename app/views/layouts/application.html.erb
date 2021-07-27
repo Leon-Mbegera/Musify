@@ -29,12 +29,12 @@
           </div>
 
             <nav class= "navbar navbar-expand-lg">
+            
               <ul class= 'navbar-nav'>
-                <li class = "nav-link c-link"> <%= link_to "Home"%></li>
-                <li class = "nav-link c-link"> <%= link_to "Grime"%></li>
-                <li class = "nav-link c-link"> <%= link_to "Trap"%></li>
-                <li class = "nav-link c-link"> <%= link_to "House"%></li>
-                <li class = "nav-link c-link"> <%= link_to "Afro"%></li>
+                <li class = "nav-link c-link"> <%= link_to "Home", root_path%></li>
+                <% category_links.each do |category| %>
+                  <li class = "nav-link c-link"> <%= link_to category.name, category%></li>
+                <% end %>         
                 <% if user_signed_in? %>
                 <li class = "nav-link c-link"> <%= link_to "Create Article", new_article_path %></li>
                 <% end %>

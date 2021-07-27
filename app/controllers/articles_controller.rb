@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all 
     @category = Category.all
-    @article = Article.find_by(id: Vote.popular.first) || Article.first
+    @article = Article.find_by(id: Vote.popular.first.article_id) || Article.last
   end
 
   def new

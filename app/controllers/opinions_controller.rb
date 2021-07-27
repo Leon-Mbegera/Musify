@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
   def create
     @opinion = Opinion.new(opinion_params)
     @opinion.user = current_user
-    @opinion.article = params[:id]
+    @opinion.article = Article.find(params[:article_id])
 
     if @opinion.save
       redirect_to articles_path, notice: 'Opinion placed!'

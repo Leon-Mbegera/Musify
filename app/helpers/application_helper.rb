@@ -6,4 +6,8 @@ module ApplicationHelper
       button_to('vote', article_votes_path(article_id: article.id), method: 'POST')
     end
   end
+
+  def category_links
+    Category.take(5)
+  end
 end
