@@ -7,8 +7,8 @@ RSpec.describe Article, type: :model do
     expect(first_article.macro).to eq(:has_many)
   end
 
-  it 'should have zero or many comments' do
-    second_article = Article.reflect_on_association(:comments)
+  it 'should have zero or many opinions' do
+    second_article = Article.reflect_on_association(:opinions)
     expect(second_article.macro).to eq(:has_many)
   end
 
