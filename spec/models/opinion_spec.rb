@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-
   it 'should have both user_id and article_id present' do
     opinion = Opinion.new(article_id: 1)
     expect(opinion.save).to be false

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-
   it 'should have zero or many votes' do
     first_article = Article.reflect_on_association(:votes)
     expect(first_article.macro).to eq(:has_many)

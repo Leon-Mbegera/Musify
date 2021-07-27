@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @articles = Article.all 
+    @articles = Article.all
     @category = Category.all
     @article = Article.find_by(id: Vote.popular.first.article_id) || Article.last
   end
@@ -18,9 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    if @article.image.nil?
-      @article.image = 'default.jpg'
-    end
+    @article.image = 'default.jpg' if @article.image.nil?
 
     if @article.save
       redirect_to articles_path(@article_id), notice: 'Your article has been created!'

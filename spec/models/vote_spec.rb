@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
-
   it 'should have both user_id and article_id present ' do
     vote = Vote.new(user_id: 1)
     expect(vote.save).to be false
