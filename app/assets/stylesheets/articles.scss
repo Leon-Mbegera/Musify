@@ -30,7 +30,7 @@
 
 .submit {
   background-color: #fd6000;
-  color:#3f210e;
+  color: #3f210e;
   border: none;
 }
 
@@ -71,8 +71,23 @@
   color: white;
 }
 
+.article-display a {
+  color: white;
+  text-decoration: none;
+}
+
 .most-voted-title a {
   color: #fd6000;
+  font-weight: bold;
+}
+
+.c-newest-title a {
+  color: white;
+  font-weight: bold;
+}
+
+.c-name a {
+  color: white;
   font-weight: bold;
 }
 
@@ -115,11 +130,6 @@
   width: auto;
 }
 
-.c-name a {
-  color: white;
-  font-weight: bold;
-}
-
 .c-name a:hover {
   color: #fd6000;
   text-decoration: none;
@@ -129,11 +139,6 @@
   position: absolute;
   left: 5%;
   bottom: 3%;
-}
-
-.c-newest-title a {
-  color: white;
-  font-weight: bold;
 }
 
 .c-newest-title a:hover {
@@ -175,13 +180,8 @@
   height: 20rem;
 }
 
-.article-display a {
-  color: white;
-  text-decoration: none;
-}
-
 .article-display a:hover {
-  color:#fd6000;
+  color: #fd6000;
   text-decoration: none;
 }
 
@@ -202,5 +202,3 @@
     grid-template-columns: auto auto;
   }
 }
-
-

@@ -14,7 +14,7 @@
  *= require_self
  */
 
- * {
+* {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -40,18 +40,6 @@
   color: #fd6000;
 }
 
-.h-logo a {
-  font-weight: bold;
-  color:#4e443e;
-  font-size: 2em;
-  text-decoration: none;
-}
-
-.h-logo a:hover {
-  text-decoration: none;
-  color:#4e443e;
-}
-
 .f-logo a {
   font-weight: bold;
   color: white;
@@ -59,9 +47,17 @@
   text-decoration: none;
 }
 
-.f-logo a:hover {
+.h-logo a {
+  font-weight: bold;
+  color: #4e443e;
+  font-size: 2em;
   text-decoration: none;
-  color: white;
+}
+
+.buttons a {
+  color: #4e443e;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .c-link a {
@@ -70,18 +66,22 @@
   text-decoration: none;
 }
 
-.c-link a:hover {
+.h-logo a:hover {
   text-decoration: none;
-  color:#fd6000;
+  color: #4e443e;
 }
 
-.buttons a {
-  color:#4e443e;
-  font-weight: bold;
+.f-logo a:hover {
   text-decoration: none;
+  color: white;
+}
+
+.c-link a:hover {
+  text-decoration: none;
+  color: #fd6000;
 }
 
 .buttons a:hover {
-  color:#fd6000;
+  color: #fd6000;
   text-decoration: none;
 }
