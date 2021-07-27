@@ -22,7 +22,7 @@ Musify is a music-based lifestyle website that showcases top genres that are tre
 
 ## To get started
 - Clone the repository from github onto your local machine and cd into it:
-1. `$ git clone https://github.com/Deepakdanger/Musify.git`
+1. `$ git clone https://github.com/Leon-Mbegera/Musify.git`
 2. `$ cd Musify`
 
 ## Setup
