@@ -18,7 +18,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    @article.image = 'default.jpg' if @article.image.nil?
+    if @article.image.nil?
+      @article.image.attach = url_for('default.jpg') 
+    else
+      @article.image.attach(params[:article][:image])
+    end
 
     if @article.save
       redirect_to articles_path(@article_id), notice: 'Your article has been created!'
