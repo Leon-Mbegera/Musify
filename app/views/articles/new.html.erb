@@ -5,7 +5,6 @@
     <div>
       <%=f.label :category, class: 'label'%>
       <%=f.collection_select :category_id, Category.order(:name), :id, :name, { :include_blank => 'pick category' }%>
-      <p>Add a new category <%= link_to "Build Category", new_category_path%></p>
       <% @article.errors.full_messages_for(:category_id).each do |error_message| %>
         <div><%= error_message %></div>
       <% end %>

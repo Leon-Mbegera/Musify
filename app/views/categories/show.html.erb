@@ -1,7 +1,7 @@
 <section class='category-display'>
     <% flip = true %>
     <% reverse = 'flex-row-reverse' %>
-  <% category_with_articles = @category.articles.most_recent.includes(:category) %>
+  <% category_with_articles = @category.articles.most_recent.includes(:votes) %>
   <% category_with_articles.each do |article| %>
     <% if flip ^= true && category_with_articles.index(article)%2 == 0 %>
                 <% reverse = 'flex-row-reverse' %>
