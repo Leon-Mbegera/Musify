@@ -1,9 +1,9 @@
 # Musify
 
-Musify is a music-based lifestyle website that showcases top genres that are trending in today's entertainment  industry. The app displays most popular articles in each particular genre as its placeholder image with the most voted for article taking up the larger display on the home page. Logged in users can upload articles on their preferred music category, cast their votes and even share the opinions they have on such a topic.
+Musify is a music-based lifestyle website that showcases top genres that are trending in today's entertainment  industry. The app displays most recent articles in each particular genre as its placeholder image with the most voted for article taking up the larger display on the home page. Logged in users can upload articles on their preferred music category, cast their votes and even share opinions they have on such a topic.
 
 ## Heroku
-- [heroku link](https://quiet-journey-61924.herokuapp.com/users/sign_in)
+- [heroku link](https://quiet-journey-61924.herokuapp.com/users/sign_up)
 - [loom video](https://www.loom.com/share/f463f85b52d54f1a8c9e64b6a8c73dcd)
 
 ## screenshots
@@ -28,7 +28,7 @@ Musify is a music-based lifestyle website that showcases top genres that are tre
 ## Setup
 - Install the dependent gems using:
 ```
-$ bundle install`
+$ bundle install
 ```
 
 -  Configuring webpacker:
@@ -39,51 +39,49 @@ $ rails webpacker:install
 - Setup database with:
 
 ```
-   rails db:create
-   rails db:migrate
+ $ rails db:create
+ $ rails db:migrate
 ```
 ### Usage
 
 Start server with:
 
 ```
-    rails server
+ $ rails server
 ```
 Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
 ```
-    rspec --format documentation
+$ rspec --format documentation
 ```
 
-## Acknowledgement
+## Author
 
-Design from [Gregoire Vella](https://www.behance.net/sakwadesignstudio)
+👤 **Leon**
 
-TBA
+- GitHub: [github](https://github.com/Leon-Mbegera)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/leon-mbegera)
 
-## Authors
-
-TBA
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Leon-Mbegera/Musify/issues/).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## Acknowledgement
 
-TBA
+Design from [Gregoire Vella](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
-TBA
+Licensed by [MIT](https://github.com/Leon-Mbegera/Musify/blob/main/LICENSE)
 
 
 
