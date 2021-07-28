@@ -1,7 +1,14 @@
 <section class='category-display'>
+    <% flip = true %>
+    <% reverse = 'flex-row-reverse' %>
   <% category_with_articles = @category.articles.most_recent.includes(:category) %>
   <% category_with_articles.each do |article| %>
-    <div class='c-article-wrapper'>
+    <% if flip ^= true && category_with_articles.index(article)%2 == 0 %>
+                <% reverse = 'flex-row-reverse' %>
+            <% else %>
+                <% reverse = '' %>
+            <% end %>
+    <div class='c-article-wrapper <%= reverse %>'>
       <div class='article-bg'>
         <% if article.image.attached? %>
           <%=image_tag article.image, class: 'article-bg-image'  %>
@@ -12,12 +19,10 @@
         <br>
         <p class="category_article_title"><%= link_to article.title, article_path(article) %></p>
         <p><%= article.body%></p>
-        <p>Written by <%=article.user.username%></p>
-      </div>
-      <div>
         <p class="category_article_vote"><%= article.votes.count %> votes.</p>
         <p class="category_article_vote"><%= vote_btn(article)%></p>
       </div>
+      
     </div>
   <% end %>
 </section>
