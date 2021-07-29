@@ -1,24 +1,89 @@
-# README
+# Musify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Musify is a music-based lifestyle website that showcases top genres that are trending in today's entertainment  industry. The app displays most recent articles in each particular genre as its placeholder image with the most voted for article taking up the larger display on the home page. Logged in users can upload articles on their preferred music category, cast their votes and even share opinions they have on such a topic.
 
-Things you may want to cover:
+## Heroku
+- [heroku link](https://quiet-journey-61924.herokuapp.com/users/sign_up)
+- [loom video](https://www.loom.com/share/f463f85b52d54f1a8c9e64b6a8c73dcd)
 
-* Ruby version
+## screenshots
+<img src="app\assets\images\app_scrshots\1.png" alt="Home screen">
+<img src="app\assets\images\app_scrshots\2.png" alt="Home screen">
+<img src="app\assets\images\app_scrshots\3.png" alt="Category show page">
+<img src="app\assets\images\app_scrshots\5.png" alt="Opinions">
+<img src="app\assets\images\app_scrshots\7.png" alt="Sign up">
+<img src="app\assets\images\app_scrshots\6.png" alt="Login">
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby v2.7.4
+- Ruby on Rails v6.1.4
+- Postgres: >=9.5
 
-* Database creation
+## To get started
+- Clone the repository from github onto your local machine and cd into it:
+1. `$ git clone https://github.com/Leon-Mbegera/Musify.git`
+2. `$ cd Musify`
 
-* Database initialization
+## Setup
+- Install the dependent gems using:
+```
+$ bundle install
+```
 
-* How to run the test suite
+-  Configuring webpacker:
+```
+$ rails webpacker:install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Setup database with:
 
-* Deployment instructions
+```
+ $ rails db:create
+ $ rails db:migrate
+```
+### Usage
 
-* ...
+Start server with:
+
+```
+ $ rails server
+```
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+```
+$ rspec --format documentation
+```
+
+## Author
+
+👤 **Leon**
+
+- GitHub: [github](https://github.com/Leon-Mbegera)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/leon-mbegera)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Leon-Mbegera/Musify/issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgement
+
+Design from [Gregoire Vella](https://www.behance.net/sakwadesignstudio)
+
+## 📝 License
+
+Licensed by [MIT](https://github.com/Leon-Mbegera/Musify/blob/main/LICENSE)
+
+
+
+
+

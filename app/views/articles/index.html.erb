@@ -1,0 +1,33 @@
+<section>
+  <div class='most-voted'>
+    <% if @article %>
+    <div class='most-voted-title'>
+      <%= link_to @article.title, article_path(@article) %>
+    </div>
+      <p class='most-voted-body'> <%= @article.body%></p>
+      <% if @article.image.attached? %>
+        <p class='most-voted-image'> <%= image_tag @article.image, class: 'voted-image'%></p>
+      <% end %>
+    <% end %> 
+  </div>
+  
+  <div class='category-grid'>
+    <% @category.each do |category|%>
+    <div class='category-div'>
+      <% if category.articles.any? %>
+        <p class='c-newest-image'><%= image_tag category.articles.most_recent.first.image, class: 'cnewestimage' if category.articles.most_recent.first.image.attached? %></p>
+        <br>
+        <p class='c-name'><%= link_to category.name, category_path(category) %></p>
+        <div class='c-newest-title'>
+          <%= link_to category.articles.most_recent.first.title, article_path(category.articles.most_recent.first) %>
+        </div>
+      <% else %>
+        <p class='c-name'><%= link_to category.name,  category_path(category) %></p>
+        <p class='oops'>Oops! Looks like there's no articles</p>
+      <% end %>
+    </div>
+        
+    <% end %>
+  </div>
+</section>
+

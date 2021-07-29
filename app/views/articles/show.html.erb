@@ -1,0 +1,43 @@
+<section>
+  <div class='wrapper'>
+    <div class='article-display d-flex'>
+      <div>
+        <% if @article.image.attached? %>
+          <p class='article-image'><%= image_tag @article.image, class: 'article-image-1'%></p>
+        <% end %>
+      </div>
+      <div class= "text-dark">
+        <div>
+          <h5 class= 'label'><%= @article.title %></h5>
+          <p><%= @article.body%></p>
+          <p>Blogger: <%= @article.user.username%></p>
+          <%= vote_btn(@article)%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='background'>
+    <div class='form-div'>
+      <h5 class='label'>Leave your opinion...</h5>
+      <%= form_with model:  @opinion, url: article_opinions_path(@article) do |f| %>
+        <div>
+          <%= f.label :Opinion, class: 'label' %> <br>
+          <%= f.text_field :content, class: 'form-field'%>
+        </div>
+        <div>
+          <%= f.submit 'Upload', class: 'submit' %>
+        </div>
+      <% end %> 
+    </div>
+
+    <div class='opinion-div'>
+      <% if @article.opinions.any? %>
+        <h5 class='label'>Other's opinions</h5>
+        <% @article.opinions.each do |opinion| %>
+          <p><%= opinion.content %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>
