@@ -1,0 +1,28 @@
+<section class='category-display'>
+    <% flip = true %>
+    <% reverse = 'flex-row-reverse' %>
+  <% category_with_articles = @category.articles.most_recent.includes(:votes) %>
+  <% category_with_articles.each do |article| %>
+    <% if flip ^= true && category_with_articles.index(article)%2 == 0 %>
+                <% reverse = 'flex-row-reverse' %>
+            <% else %>
+                <% reverse = '' %>
+            <% end %>
+    <div class='c-article-wrapper <%= reverse %>'>
+      <div class='article-bg'>
+        <% if article.image.attached? %>
+          <%=image_tag article.image, class: 'article-bg-image'  %>
+        <% end %>
+      </div>
+      <div class="article-description">
+        <p class='name_category'><%= @category.name %></p>
+        <br>
+        <p class="category_article_title"><%= link_to article.title, article_path(article) %></p>
+        <p><%= article.body%></p>
+        <p class="category_article_vote"><%= article.votes.count %> votes.</p>
+        <p class="category_article_vote"><%= vote_btn(article)%></p>
+      </div>
+      
+    </div>
+  <% end %>
+</section>

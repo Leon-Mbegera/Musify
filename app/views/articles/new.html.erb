@@ -1,0 +1,43 @@
+<section class= 'background'>
+  <div class='form-div'>
+  <h2>Write your article</h2>
+  <%= form_with model: @article do |f|%>
+    <div>
+      <%=f.label :category, class: 'label'%>
+      <%=f.collection_select :category_id, Category.order(:name), :id, :name, { :include_blank => 'pick category' }%>
+      <% @article.errors.full_messages_for(:category_id).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%=f.label :title, class: 'label'%>
+      <%=f.text_field :title, class: 'form-field' %>
+      <% @article.errors.full_messages_for(:title).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>  
+    </div>
+
+    <div>
+      <%=f.label :body, class: 'label'%>
+      <%=f.text_area :body, class: 'form-field'%>
+       <% @article.errors.full_messages_for(:body).each do |error_message| %>
+        <div><%= error_message %></div>
+      <% end %>
+    </div>
+
+    <div class='d-flex flex-column'>
+      <%=f.label :image, class: 'label'%>
+      <%=f.file_field :image%>
+      <% @article.errors.full_messages_for(:image).each do |error_message| %>
+        <div><% error_message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%=f.submit 'Upload', class: 'submit my-4'%>
+    </div>
+
+  <%end%>
+  </div>
+</section>
